@@ -1,3 +1,5 @@
+# ABAP 7.40
+
 > [!NOTE]
 > ## In-line table declaration
 
@@ -283,3 +285,6 @@ DATA(row_with_max_snocoun) =
                        FOR  i = 1 UNTIL i > n
                        NEXT f = f * i ) ).
 ```
+
+[^1]: [ABAP 7.40 Quick Reference](https://community.sap.com/t5/technology-blogs-by-members/abap-7-40-quick-reference/ba-p/13287523)
+[^2]: [NEW FEATURES IN ABAP 7.4](https://itpfed.com/features-abap-74-declaring-creating-variables/)
