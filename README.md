@@ -150,9 +150,9 @@ lt_new_flights =
 > [!NOTE]
 > ## If
 ```
-DATA(lv_rfcdest) = COND char32( WHEN sy-sysid = 'ZZE' THEN 'DEVCLTN100'
-			    WHEN sy-sysid = 'ZZF' THEN 'QASCLTN100'
-			    ELSE ''  ).
+DATA(lv_rfcdest) = COND char32( WHEN sy-sysid = 'DEV' THEN 'DEVCLTN100'
+			    	WHEN sy-sysid = 'QAS' THEN 'QASCLTN100'
+			    	ELSE ''  ).
 ```
 ```
 DATA(text) =
