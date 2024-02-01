@@ -16,14 +16,14 @@ TYPES: BEGIN OF ty_test_prod,
      ordered_prod TYPE crmd_orderadm_i-ordered_prod,                    
    END OF ty_test_prod.                                                 
 DATA lt_test_prod TYPE TABLE OF ty_test_prod.                               
-lt_test_prod = VALUE #( ( ordered_prod = 'CONFERENCE' )              
-		    ( ordered_prod = 'TELWEB5' )              
-		    ( ordered_prod = 'TELWEB15' )             
-		    ( ordered_prod = 'TELWEB50' ) ).           
+lt_test_prod = VALUE #( ( ordered_prod = 'PROD_X' )              
+		        ( ordered_prod = 'PROD_A' )              
+		        ( ordered_prod = 'PROD_B' )             
+		        ( ordered_prod = 'PROD_C' ) ).           
 						
 ls_item-product_id = COND #( WHEN line_exists( lt_test_prod[ sy-tabix ] )
-							 THEN lt_test_prod[ sy-tabix ]
-			 ELSE lt_test_prod[ 2 ] ).
+				THEN lt_test_prod[ sy-tabix ]
+			     ELSE lt_test_prod[ 2 ] ).
 ```	
 ``` 
 ASSERT it_sap = VALUE lty_file_tab(
