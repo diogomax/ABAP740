@@ -32,7 +32,7 @@ ASSERT it_sap = VALUE lty_file_tab(
 ```
 
 > [!NOTE]
-> ## Read table
+> ## Read
 ```
 IF line_exists( vendors[ id = '00AED' ] ).
   vendors[ id = '00AED' ].
