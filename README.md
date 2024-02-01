@@ -245,7 +245,7 @@ LOOP AT flights INTO DATA(flight)
 ENDLOOP.
 cl_demo_output=>display( ).
 ```
-
+### Group by start date
 ```
 LOOP AT gt_items ASSIGNING FIELD-SYMBOL(<fs_item>)
      GROUP BY ( contract_start = <fs_item>-contract_start )
