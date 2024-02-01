@@ -266,12 +266,11 @@ ENDLOOP.
 ```
 DATA(lv_lines) = REDUCE i( INIT x = 0 FOR wa IN gt_itab WHERE( F1 = ‘XYZ’ ) NEXT x = x + 1 ).
 ```
-
+### Concatenate from table
 ``` 
-* Concatenate from table
 lw_output_h-sl_text = REDUCE #( INIT text = '' FOR <line> IN lt_tline NEXT text = text && <line>-tdline ).
 ```
-
+### Row with max value
 ```
 DATA(row_with_max_snocoun) =
   REDUCE ls_student1(
