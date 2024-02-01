@@ -148,7 +148,7 @@ lt_new_flights =
 ```
 
 > [!NOTE]
-> ## If
+> ## Conditional
 ```
 DATA(lv_rfcdest) = COND char32( WHEN sy-sysid = 'DEV' THEN 'DEVCLTN100'
 			    	WHEN sy-sysid = 'QAS' THEN 'QASCLTN100'
