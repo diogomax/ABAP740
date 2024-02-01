@@ -269,7 +269,7 @@ DATA(lv_lines) = REDUCE i( INIT x = 0 FOR wa IN gt_itab WHERE( F1 = ‘XYZ’ ) 
 
 ``` 
 * Concatenate from table
-lw_output_h-sl_text = REDUCE #( INIT text = `` FOR <line> IN lt_tline NEXT text = text && <line>-tdline ).
+lw_output_h-sl_text = REDUCE #( INIT text = '' FOR <line> IN lt_tline NEXT text = text && <line>-tdline ).
 ```
 
 ```
