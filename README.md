@@ -136,6 +136,22 @@ lt_new_flights =
 ```
 
 > [!NOTE]
+> ## If
+```
+    DATA(lv_rfcdest) = COND char32( WHEN sy-sysid = 'ZZE' THEN 'DZRCLTN100'
+                                    WHEN sy-sysid = 'ZZF' THEN 'TZECLTN100'
+                                    ELSE ''  ).
+```
+```
+DATA(text) =
+NEW class( )->meth(
+	 SWITCH #( sy-langu
+			  WHEN 'D' THEN 'DE'
+			  WHEN 'E' THEN 'EN'
+			   ELSE THROW cx_langu_not_supported( ) ) ).
+```
+
+> [!NOTE]
 > ## String
 ```
 *ALPHA = IN|OUT|RAW|(val)]
@@ -187,22 +203,6 @@ SY-ZONLO = CET
         lv_context = |\|{ gv_std_pl }-{ gs_hp-ordered_prod }-{ gs_lm-ordered_prod }\|{ gs_lm-da_frequency }\|{ gv_scale_id }\||.
 ```
 
-> [!NOTE]
-> ## If
-```
-    DATA(lv_rfcdest) = COND char32( WHEN sy-sysid = 'ZZE' THEN 'DZRCLTN100'
-                                    WHEN sy-sysid = 'ZZF' THEN 'TZECLTN100'
-                                    ELSE ''  ).
-```
-```
-DATA(text) =
-NEW class( )->meth(
-	 SWITCH #( sy-langu
-			  WHEN 'D' THEN 'DE'
-			  WHEN 'E' THEN 'EN'
-			   ELSE THROW cx_langu_not_supported( ) ) ).
-```
-
 
 > [!NOTE]
 > ## Move
@@ -212,7 +212,7 @@ ls_line2 = CORRESPONDING #( BASE ( ls_line2 ) ls_line1 ).
 ```
 
 > [!NOTE]
-> ## Loop
+> ## Loop at group
 ```
 DATA flights TYPE TABLE OF spfli WITH EMPTY KEY.
 
