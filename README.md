@@ -211,8 +211,8 @@ ENDIF.
 ```
 
 ```
-        " |<STD_PL_PREFIX>-<MAIN_PRODUCT_ID>-<LEISTUNGSMERKMAL_ID>|<EFF_INTERVAL>|<SCALE_PRICE_ID>|
-        lv_context = |\|{ gv_std_pl }-{ gs_hp-ordered_prod }-{ gs_lm-ordered_prod }\|{ gs_lm-da_frequency }\|{ gv_scale_id }\||.
+" |<STD_PL_PREFIX>-<MAIN_PRODUCT_ID>-<LEISTUNGSMERKMAL_ID>|<EFF_INTERVAL>|<SCALE_PRICE_ID>|
+lv_context = |\|{ gv_std_pl }-{ gs_hp-ordered_prod }-{ gs_lm-ordered_prod }\|{ gs_lm-da_frequency }\|{ gv_scale_id }\||.
 ```
 
 
