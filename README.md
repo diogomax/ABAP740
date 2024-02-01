@@ -1,4 +1,5 @@
-# In-line table declaration
+> [!TIP]
+> ## In-line table declaration
 ```
 DATA itab TYPE RANGE OF i.
 itab = VALUE #( sign = 'I'  option = 'BT' 
@@ -27,7 +28,8 @@ itab = VALUE #( sign = 'I'  option = 'BT'
 		( sokey = 'Key2' sopono = 'PO#34' socono = 'Four'  flag = 'D' ) ).
 ```
 
-# Read table 
+> [!TIP]
+> ## Read table 
 ```
 DATA( lt_materials_fert ) = FILTER #( lt_all_materials USING KEY mtart WHERE mtart = 'FERT' ).
 ```
@@ -58,7 +60,8 @@ wa = itab[ KEY key COMPONENTS col1 = … col2 = … ].
 							( VALUE #( BASE <line> flag = 'D' ) ) ) ) ).
 ```
 
-# For
+> [!TIP]
+> ## For
 ```
 DATA(gt_citys) = VALUE ty_citys( FOR ls_ship IN gt_ships ( ls_ship–city ) ).
 ```
@@ -131,7 +134,8 @@ lt_new_flights =
   ).
 ```
 
-# String
+> [!TIP]
+> ## String
 ```
 *ALPHA = IN|OUT|RAW|(val)]
 *ld_message = |{ ld_delivery_number ALPHA = OUT }|.
@@ -182,7 +186,8 @@ SY-ZONLO = CET
         lv_context = |\|{ gv_std_pl }-{ gs_hp-ordered_prod }-{ gs_lm-ordered_prod }\|{ gs_lm-da_frequency }\|{ gv_scale_id }\||.
 ```
 
-# If
+> [!TIP]
+> ## If
 ```
     DATA(lv_rfcdest) = COND char32( WHEN sy-sysid = 'ZZE' THEN 'DZRCLTN100'
                                     WHEN sy-sysid = 'ZZF' THEN 'TZECLTN100'
@@ -198,13 +203,15 @@ NEW class( )->meth(
 ```
 
 
-# Move
+> [!TIP]
+> ## Move
 ```
 MOVE-CORRESPONDING ls_line1 TO ls_line2.
 ls_line2 = CORRESPONDING #( BASE ( ls_line2 ) ls_line1 ).
 ```
 
-# Loop
+> [!TIP]
+> ## Loop
 ```
 DATA flights TYPE TABLE OF spfli WITH EMPTY KEY.
 
@@ -241,7 +248,8 @@ LOOP AT gt_items ASSIGNING FIELD-SYMBOL(<fs_item>)
 ENDLOOP.
 ```
 
-# Reduce
+> [!TIP]
+> ## Reduce
 ```
 DATA(lv_lines) = REDUCE i( INIT x = 0 FOR wa IN gt_itab WHERE( F1 = ‘XYZ’ ) NEXT x = x + 1 ).
 ```
@@ -263,7 +271,8 @@ DATA(row_with_max_snocoun) =
 ```
 
 
-# Sample: Factorial
+> [!TIP]
+> ## Sample: Factorial
 ```
     fact = COND #( WHEN n < 0
                      THEN 0
