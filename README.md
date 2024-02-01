@@ -32,25 +32,24 @@ ASSERT it_sap = VALUE lty_file_tab(
 ```
 
 > [!NOTE]
-> ## Read table 
-```
-DATA( lt_materials_fert ) = FILTER #( lt_all_materials USING KEY mtart WHERE mtart = 'FERT' ).
-```
+> ## Read table
 ```
 IF line_exists( vendors[ id = '00AED' ] ).
   vendors[ id = '00AED' ].
 ENDIF.
 ```
 ```
-wa = itab[ KEY key INDEX idx ].
-```
-```
-DATA(idx) = line_index( itab[ … ] ).
-```
-```
 wa = itab[ col1 = … col2 = … ].
 wa = itab[ KEY key col1 = … col2 = … ].
 wa = itab[ KEY key COMPONENTS col1 = … col2 = … ].
+```
+### Replace CX_SY_ITAB_LINE_NOT_FOUND with initial value
+```
+VALUE #( lt_ser[ sernr = lw_j-sernr ]-matnr OPTIONAL )
+```
+### Filter
+```
+DATA( lt_materials_fert ) = FILTER #( lt_all_materials USING KEY mtart WHERE mtart = 'FERT' ).
 ```
 ``` 
 it_sap = VALUE #(
@@ -62,6 +61,16 @@ it_sap = VALUE #(
 				  AND socono = socono )
 	( VALUE #( BASE <line> flag = 'D' ) ) ) ) ).
 ```
+
+### Index
+```
+wa = itab[ KEY key INDEX idx ].
+```
+```
+DATA(idx) = line_index( itab[ … ] ).
+```
+
+
 
 > [!NOTE]
 > ## For
