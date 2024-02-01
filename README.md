@@ -298,3 +298,4 @@ fact = COND #( WHEN n < 0
 # External References
 - [ABAP 7.40 Quick Reference](https://community.sap.com/t5/technology-blogs-by-members/abap-7-40-quick-reference/ba-p/13287523)
 - [NEW FEATURES IN ABAP 7.4](https://itpfed.com/features-abap-74-declaring-creating-variables/)
+- [Google :)](https://www.google.com/search?q=abap+7.4)
