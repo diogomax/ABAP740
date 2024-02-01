@@ -176,10 +176,7 @@ SY-ZONLO = CET
         ls_cstic-value_txt = ls_cstic-value.
      ENDIF.
 ```
-``` 
-* Concatenate from table
-lw_output_h-sl_text = REDUCE #( INIT text = `` FOR <line> IN lt_tline NEXT text = text && <line>-tdline ).
-```
+
 ```
         " |<STD_PL_PREFIX>-<MAIN_PRODUCT_ID>-<LEISTUNGSMERKMAL_ID>|<EFF_INTERVAL>|<SCALE_PRICE_ID>|
         lv_context = |\|{ gv_std_pl }-{ gs_hp-ordered_prod }-{ gs_lm-ordered_prod }\|{ gs_lm-da_frequency }\|{ gv_scale_id }\||.
@@ -247,6 +244,11 @@ ENDLOOP.
 # Reduce
 ```
 DATA(lv_lines) = REDUCE i( INIT x = 0 FOR wa IN gt_itab WHERE( F1 = ‘XYZ’ ) NEXT x = x + 1 ).
+```
+
+``` 
+* Concatenate from table
+lw_output_h-sl_text = REDUCE #( INIT text = `` FOR <line> IN lt_tline NEXT text = text && <line>-tdline ).
 ```
 
 ```
