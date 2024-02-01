@@ -1,5 +1,6 @@
 > [!NOTE]
 > ## In-line table declaration
+
 ```
 DATA itab TYPE RANGE OF i.
 itab = VALUE #( sign = 'I'  option = 'BT' 
