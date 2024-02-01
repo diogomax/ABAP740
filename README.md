@@ -78,7 +78,8 @@ DATA(idx) = line_index( itab[ … ] ).
 DATA(gt_citys) = VALUE ty_citys( FOR ls_ship IN gt_ships ( ls_ship–city ) ).
 ```
 ```
-DATA(lt_cc_guid) = VALUE crmt_object_guid_tab( FOR ls_cc_rel IN lt_cc_rel ( CONV #( ls_cc_rel-zzheader_guid ) ) ).
+DATA(lt_cc_guid) = VALUE crmt_object_guid_tab(
+	FOR ls_cc_rel IN lt_cc_rel ( CONV #( ls_cc_rel-zzheader_guid ) ) ).
 ```
 ```
 DATA(lt_delete_survey) = VALUE crmt_survey_du_tab(
