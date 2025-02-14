@@ -281,7 +281,19 @@ DATA(row_with_max_snocoun) =
       THEN row
       ELSE max ) ).
 ```
-
+### Get dates from a period
+```
+TRY.
+  DATA(lv_value) = REDUCE #( 
+      INIT v TYPE ... 
+           exit TYPE i
+      FOR ... WHERE ( ... erdat <= sy-datum ... )
+      NEXT v    = ...
+           exit = COND #( WHEN v IS NOT INITIAL THEN THROW lx_stop ) )
+CATCH lx_stop.
+  " Stop
+ENDTRY.
+```
 
 > [!TIP]
 > ## Sample: Factorial
